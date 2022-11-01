@@ -15,10 +15,6 @@ let package = Package(
             name: "SwiftLint",
             targets: ["SwiftLint"]
         ),
-        .plugin(
-            name: "SwiftLintFix",
-            targets: ["SwiftLintFix"]
-        ),
     ],
     targets: [
         .binaryTarget(
@@ -33,13 +29,13 @@ let package = Package(
             dependencies: ["SwiftLintBinary"]
         ),
 
-        .plugin(
-            name: "SwiftLintFix",
-            capability: .command(
-                intent: .sourceCodeFormatting(),
-                permissions: [.writeToPackageDirectory(reason: "Fixes fixable lint issues")]
-            ),
-            dependencies: ["SwiftLintBinary"]
-        ),
+//        .plugin(
+//            name: "SwiftLintFix",
+//            capability: .command(
+//                intent: .sourceCodeFormatting(),
+//                permissions: [.writeToPackageDirectory(reason: "Fixes fixable lint issues")]
+//            ),
+//            dependencies: ["SwiftLintBinary"]
+//        ),
     ]
 )
